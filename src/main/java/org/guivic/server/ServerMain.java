@@ -18,6 +18,8 @@ public class ServerMain {
                 DatagramPacket datagramPacket = new DatagramPacket(receiveData, receiveData.length);
                 datagramSocket.receive(datagramPacket);
 
+                System.out.println("Conexión establecida con el cliente " + datagramPacket.getSocketAddress());
+
                 message = new String(datagramPacket.getData(), 0, datagramPacket.getLength());
 
                 String[] input = message.split(":");
